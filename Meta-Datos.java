@@ -85,7 +85,7 @@ public class MostrarConsulta
 	    }
 	}	
 
-    	return nombresColumnas;
+    	return nombresColumnas; ///retorna los nombre de la columna de la tablas en un arreglo unidimencional
     }
     
     
@@ -142,30 +142,30 @@ public class MostrarConsulta
             }
 	}
 
-    	return datosDevueltos;
+    	return datosDevueltos; //Retorna los datos en forma de un arreglo bidimencional
     }   
 
     
     public String Usuario() throws SQLException
     {
-        return DatosMeta.getUserName();
+        return DatosMeta.getUserName();   //Retorna el nombre del usuario que esta conectado.
     }
 
     
     public ArrayList<String> retornarTablas(Connection conRecibida) throws SQLException
-    {
+    {  ///Este metodo  retorna el nombre de todas la tablas creadas  por un  usario.
         con = conRecibida;
         ArrayList<String> tablas = new ArrayList();
         Statement Stm = con.createStatement();
-        ResultSet resulatdo = Stm.executeQuery("Select TABLE_NAME from user_tables");
+        ResultSet resulatdo = Stm.executeQuery("Select TABLE_NAME from user_tables");  ///Aqui se trae todo los nombre de las tablas de un usuario
      
         while(resulatdo.next())
         {
            String nom = resulatdo.getString("TABLE_NAME");
-           tablas.add(nom);
+           tablas.add(nom);///Se almecenan eso nombre de las tablas  en este arraylist
         }
     
-        return tablas;
+        return tablas; //se retornan los nombre de las tablas en el arraylist
     }
     
     
