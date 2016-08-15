@@ -15,6 +15,7 @@ public class MostrarConsulta
     private String [] nombresColumnas;
     private String error;
 
+   ///Este contructor recibe un objeto tipo conexion y un String que tiene una consulta sql, a esta consulta le sacamos todos lo metadatos.
     public MostrarConsulta(Connection conRecibida, String consultaRecibida)
     {
     	conexion = conRecibida;
@@ -41,7 +42,7 @@ public class MostrarConsulta
 	}  	
     }
     
-    
+    //Este Contructor solo se utiliza cuando solo queremos saber los nombre de las tablas o el usuario.
     public MostrarConsulta(Connection conRecibida)
     {
     	conexion = conRecibida;
